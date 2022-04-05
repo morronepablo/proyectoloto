@@ -1,0 +1,92 @@
+/* CUADRICULA CELDAS */
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-celda {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 380px;
+  margin-top: 80px;
+  /*border: 1px solid black;*/
+}
+
+.container-celda button {
+  height: 52px;
+  width: 52px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  background-color: green;
+  color: white;
+}
+
+.container-celda button.botonActivo {
+  background-color: red;
+}
+
+.btn-play {
+  background: #529DFE;
+  color: yellow;
+  border: none;
+  border-radius: 10px;
+  width: 100% !important;
+  height: 70px !important;
+  cursor: pointer;
+}
+
+.container-play {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 380px;
+  margin-top: 80px;
+}
+.btn-play {
+  width: 100px;
+  height: 50px;
+  font-size: 30px;
+  margin: auto;
+}
+
+.intermitente{
+  padding: 20px 20px;
+
+  animation: infinite resplandorAnimation 1s;
+
+}
+
+@keyframes resplandorAnimation {
+  0%,100%{
+
+    background: #2381fc;
+  }
+  50%{
+
+    background: #006eff;
+  }
+
+}
+
+@media(min-width: 320px) and (max-width: 767px) {
+  .fixcontent{
+    max-width: 320px;
+
+  }
+
+  .section__inputnote{
+      margin-bottom: 0%;
+  }
+
+  /* CUADRICULA CELDAS */
+
+  .container-play {
+    width: 280px;
+  }
+  .btn-play.intermitente {
+    width: 90% !important;
+  }
+
+}

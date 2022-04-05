@@ -21,6 +21,8 @@
   margin-bottom: 2px;
   background-color: green;
   color: white;
+  border: none;
+  border-radius: 2px;
 }
 
 .container-celda button.botonActivo {

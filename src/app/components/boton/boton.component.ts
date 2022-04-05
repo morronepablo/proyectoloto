@@ -193,6 +193,7 @@ export class BotonComponent implements OnInit {
       "numero": "45"
     }
   ];
+  public apuestaUsuario = [];
 
   public contador = 0;
 
@@ -200,42 +201,50 @@ export class BotonComponent implements OnInit {
 
   }
 
-  
-  
+
+
   ngOnInit(): void {
-    
+
   }
 
   goBoton(id:any): void {
     let page = document.getElementById(id);
-    console.log("Contador ",this.contador);
-    if(this.contador >= 6) {
-      this.contador = 6;
-      if (page.classList.contains("botonActivo")) {
-        page.className = ""
-        this.contador = this.contador - 2;
-      }
-    } else {
-      this.contador = this.contador + 1;
-    }
-    if(this.contador > 0 && this.contador <=6 ) {
-      
+    let inactivo = page.classList.contains("botonActivo");
+    if(this.contador >= 0 && this.contador < 6 ) {
       console.log(id);
       console.log(page);
-      if (page.classList.contains("botonActivo")) {
-        page.className = ""
-        this.contador = this.contador - 2;
+      if(inactivo == false) {
+        page.className = "botonActivo";
+        this.contador = this.contador + 1;
+        this.apuestaUsuario.push(id);
+        console.log(this.apuestaUsuario);
       } else {
-        page.className = "botonActivo"
-        if(this.contador >5) {
-          this.contador=6;
-        }
+        page.className = "";
+        this.contador = this.contador - 1;
+        let apuesta = this.apuestaUsuario.indexOf(id);
+        console.log("posicion: ",apuesta);
+        this.apuestaUsuario.splice(apuesta,1)
+        console.log(this.apuestaUsuario);
       }
+      console.log("Contador ",this.contador);
+      console.log(inactivo);
     }
-    
-    
+    if(this.contador == 6) {
+      if(inactivo == true) {
+        page.className = "";
+        this.contador = this.contador - 1;
+        let apuesta = this.apuestaUsuario.indexOf(id);
+        console.log("posicion: ",apuesta);
+        this.apuestaUsuario.splice(apuesta,1)
+        console.log(this.apuestaUsuario);
+      }
+      console.log("Contador 2",this.contador);
+      console.log(inactivo);
+    }
+
+
     console.log("Contador ",this.contador);
-     
+
   }
 
 

@@ -5,28 +5,275 @@
   flex-direction: column;
 }
 
+.container-numeros {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 380px;
+  height: 60px;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+
+.container-numeros div {
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  justify-content: space-between;
+  border-radius: 50%;
+  box-shadow: 4px 4px 8px gray;
+}
+
+.container-numeros div h5 {
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  margin: 19px 5px;
+  font-weight: 600;
+}
+
+.container-title-apuesta {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 380px;
+  margin-top: 10px;
+  height: 20px;
+  border: 1px solid rgb(9, 67, 82);
+  padding: 5px 0px 5px 5px;
+  background-color: rgb(9, 67, 82);
+  /*border: 1px solid black;*/
+}
+
+.container-title-apuesta h4 {
+  margin: 0;
+  margin-top: 1px;
+  margin-left: 2px;
+  font-family: 'Arial';
+  font-size: 14px;
+  color: white;
+  font-weight: 300;
+}
+
+.container-numeros-b {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 380px;
+  height: 40px;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.container-numeros-b div {
+  width: 38px;
+  height: 38px;
+  background-color: black;
+  justify-content: space-between;
+  border-radius: 50%;
+  box-shadow: 4px 4px 8px gray;
+}
+
+.container-numeros-b div h5 {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  margin: 10px 5px;
+  font-weight: 600;
+}
+
 .container-celda {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
   width: 380px;
-  margin-top: 80px;
+  margin-top: 0px;
+  border: 1px solid #024200;
+  padding: 5px 0px 5px 5px;
+  background-color: #024200;
   /*border: 1px solid black;*/
 }
 
 .container-celda button {
   height: 52px;
   width: 52px;
+  /* margin-right: 2px;
+  margin-bottom: 2px; */
+  /* background-color: green; */
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border: 1px solid #E7AC2D;
+  cursor: url("../../../assets/img/ficha2.png"), auto !important;
+  /* border-radius: 2px; */
+}
+
+.container-celda #suerte {
+  background: #2381fc;
+  width: 156px;
+  cursor: default !important;
+  cursor: pointer !important;
+}
+
+/* button#suerte.btn-disabled {
+  background: #CECECE !important;
+  color: #808080 !important;
+} */
+
+button[id='0'] {
+  /* margin-top: 6px !important;
+  width: 312px !important; */
+  background-color: #024200;
+  /* margin-left: 4px !important; */
+}
+
+button[id='1'],
+button[id='3'],
+button[id='5'],
+button[id='7'],
+button[id='9'],
+button[id='11'],
+button[id='13'],
+button[id='15'],
+button[id='17'],
+button[id='19'],
+button[id='21'],
+button[id='23'],
+button[id='25'],
+button[id='27'],
+button[id='29'],
+button[id='31'],
+button[id='33'],
+button[id='35'],
+button[id='37'],
+button[id='39'],
+button[id='41'],
+button[id='43'],
+button[id='45'] {
+  background-color: #D0021B;
+}
+
+button[id='2'],
+button[id='4'],
+button[id='6'],
+button[id='8'],
+button[id='10'],
+button[id='12'],
+button[id='14'],
+button[id='16'],
+button[id='18'],
+button[id='20'],
+button[id='22'],
+button[id='24'],
+button[id='26'],
+button[id='28'],
+button[id='30'],
+button[id='32'],
+button[id='34'],
+button[id='36'],
+button[id='38'],
+button[id='40'],
+button[id='42'],
+button[id='44'] {
+  background-color: #000;
+}
+
+button[id='0'],
+button[id='1'],
+button[id='2'],
+button[id='3'],
+button[id='4'],
+button[id='5'],
+button[id='6'] {
+  margin-top: 6px;
+}
+
+button[id='0'],
+button[id='7'],
+button[id='14'],
+button[id='21'],
+button[id='28'],
+button[id='35'],
+button[id='42'] {
+  margin-left: 4px;
+}
+
+button[id='42'],
+button[id='43'],
+button[id='44'],
+button[id='45'] {
+  margin-bottom: 6px;
+}
+
+.container-jackTitulo {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 380px;
+  margin-top: 10px;
+  height: 20px;
+  border: 1px solid black;
+  padding: 5px 0px 5px 5px;
+  background-color: black;
+  /*border: 1px solid black;*/
+}
+
+.container-jack {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 380px;
+  margin-top: 0px;
+  border: 1px solid #024200;
+  padding: 5px 0px 5px 5px;
+  background-color: #024200;
+  /*border: 1px solid black;*/
+}
+
+.container-jackTitulo h4 {
+  margin: auto;
+  color: white;
+}
+
+.container-jack button {
+  height: 52px;
+  width: 52px;
   margin-right: 2px;
   margin-bottom: 2px;
-  background-color: green;
+  background-color: orange;
   color: white;
+  font-size: 20px;
+  font-weight: 600;
   border: none;
   border-radius: 2px;
+  cursor: url("../../../assets/img/ficha2.png"), auto !important;
 }
 
 .container-celda button.botonActivo {
-  background-color: red;
+  background-image:url('../../../assets/img/ficha.png');
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 30px 30px;
+  color: transparent;
+  /* background-color: red; */
+}
+
+.container-jack button.botonActivo {
+  background-image:url('../../../assets/img/ficha.png');
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 30px 30px;
+  color: transparent;
+  /* background-color: blue; */
+}
+
+.container-play {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 380px;
+  margin-top: 20px;
 }
 
 .btn-play {
@@ -39,13 +286,11 @@
   cursor: pointer;
 }
 
-.container-play {
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  width: 380px;
-  margin-top: 80px;
+.btn-play button[disabled=disabled], button:disabled {
+  background-color: rgb(206, 206, 206);
+  color: grey;
 }
+
 .btn-play {
   width: 100px;
   height: 50px;
@@ -84,11 +329,115 @@
 
   /* CUADRICULA CELDAS */
 
+  .container-numeros {
+    width: 260px;
+  }
+
+  .container-numeros div {
+    width: 40px;
+    height: 40px;
+  }
+
+  .container-numeros div h5 {
+    font-size:18px;
+    margin: 10px;
+  }
+
+  .container-title-apuesta {
+    margin-top: -10px !important;
+    width: 260px;
+  }
+
+  .container-numeros-b {
+    margin-top: 5px !important;
+    width: 260px;
+    height: 30px;
+  }
+
+  .container-numeros-b div {
+    width: 25px;
+    height: 25px;
+  }
+
+  .container-numeros-b div h5 {
+    font-size:10px;
+    margin: 6px 5px;
+  }
+
+  .container-celda {
+    width: 260px;
+    margin-top: 0px;
+  }
+
+  button[id='0'],
+  button[id='1'],
+  button[id='2'],
+  button[id='3'],
+  button[id='4'],
+  button[id='5'] {
+    margin-top: 6px !important;
+  }
+
+  button[id='6'] {
+    margin-top: 0px !important;
+  }
+
+  button[id='7'],
+  button[id='14'],
+  button[id='21'],
+  button[id='28'],
+  button[id='35'],
+  button[id='42'] {
+    margin-left: 0px !important;
+  }
+
+  button[id='0'],
+  button[id='6'],
+  button[id='12'],
+  button[id='18'],
+  button[id='24'],
+  button[id='30'],
+  button[id='36'],
+  button[id='42'] {
+    margin-left: 4px !important;
+  }
+
+  button[id='42'],
+  button[id='43'],
+  button[id='44'],
+  button[id='45'] {
+    margin-bottom: 6px !important;
+  }
+
+  .container-celda button {
+    width: 40.8px;
+    height: 40.8px;
+  }
+
+  .container-celda #suerte {
+    width: 81.6px;
+    font-size: 14px;
+  }
+
+  .container-jackTitulo {
+    width: 260px;
+    margin-top: 5px !important;
+  }
+
+  .container-jack {
+    width: 260px;
+  }
+
+  .container-jack button {
+    width: 40.8px;
+    height: 40.8px;
+  }
+
   .container-play {
-    width: 280px;
+    width: 260px;
   }
   .btn-play.intermitente {
-    width: 90% !important;
+    width: 100% !important;
   }
 
 }

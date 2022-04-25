@@ -1,10 +1,92 @@
+<div class="container-numeros">
+  <div>
+    <h5 *ngIf="apuestaUsuario[0]">{{zfill(apuestaUsuario[0], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[0] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+  <div>
+    <h5 *ngIf="apuestaUsuario[1]">{{zfill(apuestaUsuario[1], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[1] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+  <div>
+    <h5 *ngIf="apuestaUsuario[2]">{{zfill(apuestaUsuario[2], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[2] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+  <div>
+    <h5 *ngIf="apuestaUsuario[3]">{{zfill(apuestaUsuario[3], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[3] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+  <div>
+    <h5 *ngIf="apuestaUsuario[4]">{{zfill(apuestaUsuario[4], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[4] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+  <div>
+    <h5 *ngIf="apuestaUsuario[5]">{{zfill(apuestaUsuario[5], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[5] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+</div>
+<div class="container-title-apuesta">
+  <h4>Apuesta : $ {{apuesta |  number: '.2'}}</h4>
+  <!-- <h4>Apuesta : {{ apuestaBase | number:'$':'es' }}</h4> -->
+</div>
 <div class="container-celda">
   <div *ngFor="let item of botonesArray">
-    <button id={{item.id}} (click)="goBoton(item.id)">{{item.numero}}</button>
+    <button id={{item.id}} (click)="goBoton(item.id)" style="cursor: pointer">{{item.numero}}</button>
+  </div>
+  <div>
+    <button id="suerte" (click)="goSuerte()" style="cursor: pointer">Suerte</button>
+  </div>
+</div>
+<div class="container-numeros-b">
+  <div>
+    <h5 *ngIf="apuestaUsuario[6]">{{zfill(apuestaUsuario[6], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[6] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+  <div>
+    <h5 *ngIf="apuestaUsuario[7]">{{zfill(apuestaUsuario[7], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[7] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+  <div>
+    <h5 *ngIf="apuestaUsuario[8]">{{zfill(apuestaUsuario[8], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[8] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+  <div>
+    <h5 *ngIf="apuestaUsuario[9]">{{zfill(apuestaUsuario[9], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[9] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+  <div>
+    <h5 *ngIf="apuestaUsuario[10]">{{zfill(apuestaUsuario[10], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[10] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+  <div>
+    <h5 *ngIf="apuestaUsuario[11]">{{zfill(apuestaUsuario[11], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[11] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+  <div>
+    <h5 *ngIf="apuestaUsuario[12]">{{zfill(apuestaUsuario[12], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[12] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+  <div>
+    <h5 *ngIf="apuestaUsuario[13]">{{zfill(apuestaUsuario[13], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[13] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+  <div>
+    <h5 *ngIf="apuestaUsuario[14]">{{zfill(apuestaUsuario[14], 2)}}</h5>
+    <h5 *ngIf="apuestaUsuario[14] == 0">{{zfill(0, 2)}}</h5>
+  </div>
+</div>
+<div class="container-jackTitulo">
+  <h4>JACKPOT</h4>
+</div>
+<div class="container-jack">
+  <div *ngFor="let item of jackArray">
+    <button id={{item.id}} (click)="goJack(item.id)" style="cursor: pointer">{{item.numero}}</button>
   </div>
 </div>
 <div class="container-play">
-  <button class="btn-play intermitente" (click)="goPlay()">
+  <button class="btn-play" (click)="goPlay()" *ngIf="!playStart" [disabled]="true">
+    <i class="far fa-play-circle"></i>
+  </button>
+  <button class="btn-play intermitente" (click)="goPlay()" *ngIf="playStart">
     <i class="far fa-play-circle"></i>
   </button>
 </div>

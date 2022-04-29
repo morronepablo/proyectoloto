@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-boton',
@@ -254,7 +255,6 @@ export class BotonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
   // Funcion poner ceros a la izquierda
@@ -328,22 +328,48 @@ export class BotonComponent implements OnInit {
     }
   }
 
+  // SweetAlert2 para cuando se selecciona mas de 15 Numeros
+  goAlerta() {
+    let timerInterval
+    Swal.fire({
+      icon: 'warning',
+      title: 'Máximo de números',
+      html: 'No se puede elejir mas de 15 números!',
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading()
+      },
+      willClose: () => {
+        clearInterval(timerInterval)
+      }
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log('Estaba cerrado por el temporizador')
+      }
+    })
+  }
+
   goBoton(id:any): void {
     let page = document.getElementById(id);
     let inactivo = page.classList.contains("botonActivo");
-    if(this.contador >= 0 && this.contador < 15 ) {
+    if(this.contador >= 0 && this.contador <= 16 ) {
       console.log(id);
       console.log(page);
       this.playStart= false;
       console.log("playStart ", this.playStart);
-
       if(inactivo == false) {
-        page.className = "botonActivo";
-        this.contador = this.contador + 1;
-        this.apuestaUsuario.push(id);
-        console.log(this.apuestaUsuario);
-        console.log("APUESTA :", this.apuestaUsuario[0]);
-
+        if(this.contador == 15){
+          console.log("inactivoooooo ------>!!!!");
+          this.goAlerta();
+        } else {
+          page.className = "botonActivo";
+          this.contador = this.contador + 1;
+          this.apuestaUsuario.push(id);
+          console.log(this.apuestaUsuario);
+          console.log("APUESTA :", this.apuestaUsuario[0]);
+        }
       } else {
         page.className = "";
         this.contador = this.contador - 1;
@@ -359,15 +385,6 @@ export class BotonComponent implements OnInit {
       console.log("playStart ", this.playStart);
     }
     if(this.contador == 15) {
-      if(inactivo == true) {
-        page.className = "";
-        this.contador = this.contador - 1;
-        let apuesta = this.apuestaUsuario.indexOf(id);
-        console.log("posicion: ",apuesta);
-        this.apuestaUsuario.splice(apuesta,1)
-        console.log(this.apuestaUsuario);
-        this.playStart= false;
-      }
       console.log("Contador 2",this.contadorJack);
       if(this.contadorJack == 1 && this.contador > 5) {
         this.playStart = true;
@@ -407,7 +424,6 @@ export class BotonComponent implements OnInit {
           let element = this.apuestaUsuario[i];
           let page = document.getElementById(element);
           page.className = "botonActivo";
-          // this.contador = this.contador + 1;
         } else {
           console.log("numero existe");
           i--;
@@ -430,7 +446,6 @@ export class BotonComponent implements OnInit {
           let element = this.apuestaUsuario[i];
           let page = document.getElementById(element);
           page.className = "botonActivo";
-          // this.contador = this.contador + 1;
         } else {
           console.log("numero existe");
           i--;
@@ -449,6 +464,7 @@ export class BotonComponent implements OnInit {
     }
     this.goSwitchApuesta(this.contador);
     console.log("Apuesta ----> ", this.apuesta);
+    console.log("Contador ",this.contador);
   }
 
   goJack(id:any): void {
@@ -495,7 +511,6 @@ export class BotonComponent implements OnInit {
     }
     console.log("Contador ", this.contador);
   }
-
 
   goPlay(): void {
     console.log("playStart: ", this.playStart);

@@ -411,13 +411,13 @@ export class BotonComponent implements OnInit {
       }
       this.contador = 0;
       this.apuestaUsuario = [];
-      console.log("Aleatorio ----> ", this.randomNumber(0, 47));
+      console.log("Aleatorio ----> ", this.randomNumber(0, 46));
       for (let b = 0; b < 45; b++) {
         let page = document.getElementById(`${b}`);
         page.className = "";
       }
       for (let i = 0; i < 6; i++) {
-        let nAleatorio = this.randomNumber(0, 47);
+        let nAleatorio = this.randomNumber(0, 46);
         if(this.apuestaUsuario.indexOf(nAleatorio) == -1) {
           console.log("numero no existe");
           this.apuestaUsuario.push(nAleatorio);
@@ -433,13 +433,13 @@ export class BotonComponent implements OnInit {
       this.contador = 6;
       console.log("Contador ",this.contador);
     } else {
-      console.log("Aleatorio ----> ", this.randomNumber(0, 47));
+      console.log("Aleatorio ----> ", this.randomNumber(0, 46));
       for (let b = 0; b < 45; b++) {
         let page = document.getElementById(`${b}`);
         page.className = "";
       }
       for (let i = 0; i < 6; i++) {
-        let nAleatorio = this.randomNumber(0, 47);
+        let nAleatorio = this.randomNumber(0, 46);
         if(this.apuestaUsuario.indexOf(nAleatorio) == -1) {
           console.log("numero no existe");
           this.apuestaUsuario.push(nAleatorio);
